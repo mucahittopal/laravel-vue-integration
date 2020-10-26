@@ -1,0 +1,52 @@
+@import '~pretty-checkbox/src/pretty-checkbox.scss';
+@import "vue-select/src/scss/vue-select.scss";
+@import 'variables';
+
+ul,ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.border{
+    border: 1px solid #b2b2b2;
+}
+.input-box{
+    position: relative;
+    &.with-icon{
+        .form-control{
+            padding-left: 35px;
+        }
+        .input-icon{
+            position: absolute;
+            top: .25rem;
+            left: .75rem;
+            color: rgba(0,0,0,.5);
+        }
+    }
+    .input-autocomplete{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        ul{
+            display: none;
+            border: 1px solid $cusBorder;
+            max-height: calc(100vh - 70vh);
+            overflow-y: auto;
+            background-color: #fff;
+            li{
+                padding: 5px 15px;
+                &:hover{
+                    font-weight: 700;
+                    background-color: #f1f1f1;
+                    cursor: pointer;
+                }
+            }
+        }
+        &.show ul{
+            display: block;
+        }
+    }
+}
